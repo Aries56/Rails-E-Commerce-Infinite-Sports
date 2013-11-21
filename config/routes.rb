@@ -1,4 +1,8 @@
 InfiniteSportsStore::Application.routes.draw do
+  get "store/index"
+
+  get "store/show"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
