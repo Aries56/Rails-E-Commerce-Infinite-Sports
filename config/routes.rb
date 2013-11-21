@@ -1,7 +1,7 @@
 InfiniteSportsStore::Application.routes.draw do
-  get "store/index"
 
-  get "store/show"
+  root :to => 'store#index', :via => :get
+  match 'product/:id' => 'store#show', :as => 'product', :via => :get
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
