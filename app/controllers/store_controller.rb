@@ -14,5 +14,6 @@ class StoreController < ApplicationController
 
   def search_results
     @products = Product.where("team_id = ? AND name LIKE ?", "#{params[:category]}", "%#{params[:keywords]}%")
+    @teams = Team.order('name ASC')
   end
 end

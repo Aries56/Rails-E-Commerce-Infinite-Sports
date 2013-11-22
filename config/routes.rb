@@ -1,6 +1,6 @@
 InfiniteSportsStore::Application.routes.draw do
 
-  root :to => 'store#index', :via => :get
+  root :to => 'store#index', :as => 'home', :via => :get
   match 'products/:id' => 'store#show', :as => 'product', :via => :get
   match 'products/search_results' => 'store#search_results', :as => 'results', :via => :post
 
