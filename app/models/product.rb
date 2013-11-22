@@ -9,5 +9,5 @@ class Product < ActiveRecord::Base
   validates :description, :length => { :in => 3..100 }
   validates :price, :numericality => true
   validates :stock_quantity, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0 }
-  validates :size, :inclusion => { :in => %w(small medium large x-large), :message => "%{value} is not a valid size" }
+  validates :size, :inclusion => { :in => %w(Small Medium Large XL), :message => "%{value} is not a valid size" }
 end
