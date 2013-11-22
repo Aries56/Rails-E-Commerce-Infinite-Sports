@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   def index
     @products = Product.all
-    @teams = Team.all
+    @teams = Team.order('name ASC')
   end
 
   def show

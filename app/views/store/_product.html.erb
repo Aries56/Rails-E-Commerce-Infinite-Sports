@@ -1,0 +1,7 @@
+<% @products.each do |p| %>
+  <p>
+    <%= link_to p.team.name, p %>
+    <br />
+    <%= p.name %>
+  </p>
+<% end %>
