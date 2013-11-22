@@ -1,4 +1,5 @@
 <%= form_tag results_path do %>
 <%= text_field_tag :keywords %>
+<%= select_tag :category, options_from_collection_for_select(@teams, "id", "name") %>
 <%= submit_tag 'Search' %>
 <% end %>
