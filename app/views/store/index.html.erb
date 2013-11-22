@@ -1,5 +1,7 @@
 <h2>Infinite Sports Jerseys</h2>
 
+<%= render 'search' %>
+
 <% @products.each do |p| %>
   <p><%= link_to p.name, p %></p>
   <p><%= p.description %></p>

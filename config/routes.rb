@@ -1,7 +1,8 @@
 InfiniteSportsStore::Application.routes.draw do
 
   root :to => 'store#index', :via => :get
-  match 'product/:id' => 'store#show', :as => 'product', :via => :get
+  match 'products/:id' => 'store#show', :as => 'product', :via => :get
+  match 'products/search_results' => 'store#search_results', :as => 'results', :via => :post
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
