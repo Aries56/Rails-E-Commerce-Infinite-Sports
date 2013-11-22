@@ -1,7 +1,9 @@
-<h2><%= @product.name %></h2>
+<%= render 'search' %>
 
+<h2><%= @product.name %></h2>
+<p><%= image_tag(@product.image) %></p>
 <p><%= @product.description %></p>
 <p>Size: <%= @product.size %></p>
-<p>Price: <%= @product.price %></p>
+<p>Price: <%= number_to_currency(@product.price) %></p>
 <p>In Stock: <%= @product.stock_quantity %></p>
-<p><%= @product.team_id %></p>
+<p><%= @product.team.name %></p>

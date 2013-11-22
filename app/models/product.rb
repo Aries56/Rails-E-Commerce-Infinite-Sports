@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :size, :stock_quantity, :team_id
+  attr_accessible :description, :name, :price, :size, :stock_quantity, :team_id, :image
 
   belongs_to :team
   has_many :lineitems

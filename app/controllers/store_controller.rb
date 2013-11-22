@@ -6,6 +6,7 @@ class StoreController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @teams = Team.order('name ASC')
   end
 
   def search
