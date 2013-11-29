@@ -4,6 +4,14 @@
 
 <%= form_for @customer, url: checkout_path do |c| %>
 
+  <% if @customer.errors.any? %>
+      <ul>
+      <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+
   <p>
     <%= c.label :first_name %><br />
     <%= c.text_field :first_name %>

@@ -1,3 +1,36 @@
 <%= render 'search' %>
+<% subtotal = 0 %>
+<% taxes = 0 %>
+<% total = 0 %>
 
-<h2>Order Placed</h2>
+<h2>Order Placed! Thank you for your purchase</h2>
+
+<h3>Order Details:</h3>
+
+<p>
+  <h4>Items Purchased:</h4>
+</p>
+
+<% @line_items.each do |l| %>
+<% subtotal += l.price %>
+<%= l.product.name %><br />
+<% end %>
+
+<% if @order.pst_rate %>
+<% taxes += subtotal * @order.pst_rate %>
+<% end %>
+<% if @order.gst_rate %>
+<% taxes += subtotal * @order.gst_rate %>
+<% end %>
+<% if @order.hst_rate %>
+<% taxes += subtotal * @order.hst_rate %>
+<% end %>
+
+<p>
+  <h4>Invoice:</h4>
+</p>
+<p>
+  <b>Subtotal: </b>$<%= number_with_precision(subtotal, :precision => 2) %><br />
+  <b>Taxes: </b>$<%= number_with_precision(taxes, :precision => 2) %><br />
+  <b>Total: $<%= number_with_precision(subtotal + taxes, :precision => 2)%></b>
+</p>

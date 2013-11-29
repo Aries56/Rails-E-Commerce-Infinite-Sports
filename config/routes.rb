@@ -9,6 +9,7 @@ InfiniteSportsStore::Application.routes.draw do
 
   match '/create_customer' => 'store#create_customer', :as => 'create_customer', :via => :post
   match '/checkout' => 'store#checkout', :as => 'checkout', :via => :post
+  match '/checkout' => 'store#order_status', :as => 'order_status', :via => :get
 
   match '/about_us' => 'store#about_us', :as => 'about_us', :via => :get
   match '/contact_us' => 'store#contact_us', :as => 'contact_us', :via => :get

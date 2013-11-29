@@ -47,10 +47,35 @@ class StoreController < ApplicationController
     @provinces = Province.all
 
     if @customer.save
-      redirect_to :action => :index
+      @order = @customer.orders.build
+      @order.status = "Processed"
+      @order.gst_rate = @customer.province.gst
+      @order.pst_rate = @customer.province.pst
+      @order.hst_rate = @customer.province.hst
+      @order.save
+
+      session[:products].each do |id|
+        @product = Product.find(id)
+        @line_item = @order.line_items.build
+        @line_item.product = @product
+        @line_item.price = @product.price
+        @line_item.quantity = 1
+        @product.stock_quantity -= 1
+        @product.save
+        @line_item.save 
+      end
+
+      session[:products] = []
+
+      redirect_to :action => :order_status
     else
       render :action => :create_customer
     end
+  end
+
+  def order_status
+    @order = Order.last
+    @line_items = LineItem.where(:order_id => @order.id)
   end
 
 protected
