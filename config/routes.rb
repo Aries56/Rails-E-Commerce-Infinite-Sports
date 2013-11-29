@@ -6,6 +6,8 @@ InfiniteSportsStore::Application.routes.draw do
 
   match '/products/add_to_cart/:id' => 'store#add_to_cart', :as => 'add_to_cart', :via => :post
   match '/products/remove_from_cart/:id' => 'store#remove_from_cart', :as => 'remove_from_cart', :via => :post
+
+  match '/create_customer' => 'store#create_customer', :as => 'create_customer', :via => :post
   match '/checkout' => 'store#checkout', :as => 'checkout', :via => :post
 
   match '/about_us' => 'store#about_us', :as => 'about_us', :via => :get

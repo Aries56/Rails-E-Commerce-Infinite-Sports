@@ -37,9 +37,20 @@ class StoreController < ApplicationController
     redirect_to :action => :index
   end
 
-  def checkout
+  def create_customer
     @customer = Customer.new
     @provinces = Province.all
+  end
+
+  def checkout
+    @customer = Customer.new(params[:customer])
+    @provinces = Province.all
+
+    if @customer.save
+      redirect_to :action => :index
+    else
+      render :action => :create_customer
+    end
   end
 
 protected
