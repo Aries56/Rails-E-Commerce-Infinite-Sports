@@ -4,6 +4,12 @@ InfiniteSportsStore::Application.routes.draw do
   match 'products/:id' => 'store#show', :as => 'product', :via => :get
   match 'products/search_results' => 'store#search_results', :as => 'results', :via => :post
 
+  match '/products/add_to_cart/:id' => 'store#add_to_cart', :as => 'add_to_cart', :via => :post
+  match '/products/remove_from_cart/:id' => 'store#remove_from_cart', :as => 'remove_from_cart', :via => :post
+
+  match '/about_us' => 'store#about_us', :as => 'about_us', :via => :get
+  match '/contact_us' => 'store#contact_us', :as => 'contact_us', :via => :get
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
