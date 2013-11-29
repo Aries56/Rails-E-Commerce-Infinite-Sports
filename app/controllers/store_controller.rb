@@ -37,6 +37,10 @@ class StoreController < ApplicationController
     redirect_to :action => :index
   end
 
+  def checkout
+    
+  end
+
 protected
   def load_teams #Used with the search bar that is loaded on each page
     @teams = Team.order('name ASC')
