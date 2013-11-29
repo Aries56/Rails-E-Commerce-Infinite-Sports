@@ -8,4 +8,15 @@
     <br />
     <%= p.name %>
   </p>
+
+  <% if session[:products].include?(p.id) %>
+    <%= form_tag remove_from_cart_path(p) do %>
+    <%= submit_tag 'Remove from cart' %>
+    <% end %>
+  <% else %>
+    <%= form_tag add_to_cart_path(p) do %>
+    <%= submit_tag 'Add to cart' %>
+    <% end %>
+  <% end %>
+
 <% end %>
