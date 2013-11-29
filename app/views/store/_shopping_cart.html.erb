@@ -1,17 +1,19 @@
-<h4>Shopping Cart</h4>
+<div id="cart">
+  <h4>Shopping Cart</h4>
 
-<% if session[:products].empty? %>
-  <p>Your shopping cart is empty</p>
-<% else %>
-  <% @shopping_cart.each do |product| %>
-    <p>
-      <%= product.name %>
-      <%= form_tag remove_from_cart_path(product) do %>
-      <%= submit_tag 'Remove from cart' %>
-      <% end %>
-    </p>
+  <% if session[:products].empty? %>
+    <p>Your shopping cart is empty</p>
+  <% else %>
+    <% @shopping_cart.each do |product| %>
+      <p>
+        <%= product.name %>
+        <%= form_tag remove_from_cart_path(product) do %>
+        <%= submit_tag 'Remove' %>
+        <% end %>
+      </p>
+    <% end %>
+    <%= form_tag create_customer_path do %>
+    <%= submit_tag 'Checkout' %>
+    <% end %>
   <% end %>
-  <%= form_tag create_customer_path do %>
-  <%= submit_tag 'Checkout' %>
-  <% end %>
-<% end %>
+</div>

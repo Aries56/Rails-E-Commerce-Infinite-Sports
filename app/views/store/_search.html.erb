@@ -1,15 +1,19 @@
-<%= link_to image_tag("logo.png"), home_path %>
-<ul>
-  <li>
-    <%= link_to 'About Us', about_us_path %>
-  </li>
-  <li>
-    <%= link_to 'Contact Us', contact_us_path %>
-  </li>
-</ul>
+<div class="wrapper">
+  <p id="logo">
+    <%= link_to image_tag("logo.png"), home_path %>
+  </p>
+  <ul>
+    <li>
+      <%= link_to 'About Us', about_us_path %>
+    </li>
+    <li>
+      <%= link_to 'Contact Us', contact_us_path %>
+    </li>
+  </ul>
 
-<%= form_tag results_path do %>
-<%= text_field_tag :keywords %>
-<%= select_tag :category, options_from_collection_for_select(@teams, "id", "name") %>
-<%= submit_tag 'Search' %>
-<% end %>
+  <%= form_tag results_path do %>
+  <%= text_field_tag :keywords %>
+  <%= select_tag :category, options_from_collection_for_select(@teams, "id", "name") %>
+  <%= submit_tag 'Search' %>
+  <% end %>
+</div>

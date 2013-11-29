@@ -1,22 +1,27 @@
-<% @products.each do |p| %>
-  <p>
-    <%= link_to p.team.name, p %>
-    <% if p.image %>
-      <br />
-      <%= image_tag(p.image) %>
-    <% end %>
-    <br />
-    <%= p.name %>
-  </p>
+<div class="products">
+  <% @products.each do |p| %>
+    <div class="product">
+      <p>
+        <%= link_to p.team.name, p %>
+        <% if p.image %>
+          <br />
+          <div class="image">
+            <%= image_tag(p.image) %>
+          </div>
+        <% end %>
+        <br />
+        <%= p.name %>
+      </p>
 
-  <% if session[:products].include?(p.id) %>
-    <%= form_tag remove_from_cart_path(p) do %>
-    <%= submit_tag 'Remove from cart' %>
-    <% end %>
-  <% else %>
-    <%= form_tag add_to_cart_path(p) do %>
-    <%= submit_tag 'Add to cart' %>
-    <% end %>
+      <% if session[:products].include?(p.id) %>
+        <%= form_tag remove_from_cart_path(p) do %>
+        <%= submit_tag 'Remove from cart' %>
+        <% end %>
+      <% else %>
+        <%= form_tag add_to_cart_path(p) do %>
+        <%= submit_tag 'Add to cart' %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-
-<% end %>
+</div>

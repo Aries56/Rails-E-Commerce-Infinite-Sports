@@ -1,3 +1,110 @@
 // Place all the styles related to the store controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$product_border: #003366;
+
+html{
+	background-color: #555555;
+
+	body{
+		background-color:#FFF;
+		width:95%;
+		margin:20px auto 50px auto;
+		border:2px solid #000;
+		border-radius:20px;
+		padding:30px 25px 60px;
+
+		#logo{
+			margin-left:20px;
+			margin-bottom:0px;
+		}
+
+		#keywords{
+			width:350px;
+			margin-left:200px;
+		}
+	}
+
+	.wrapper{
+		ul{
+			text-align:right;
+			font-size:16px;
+			margin-right:70px;
+
+			li{
+				list-style:none;
+				display:inline;
+				margin:10px 15px;
+			}
+		}
+	}
+}
+
+.company_page{
+	text-align:center;
+	width:75%;
+	margin:80px auto 0px auto;
+	height:380px;
+}
+
+#cart{
+	width:20%;
+	float:left;
+	min-height:1200px;
+}
+
+.products{
+	overflow:auto;
+	margin-top:20px;
+
+	.product{
+		float:left;
+		height:380px;
+		width:240px;
+		text-align:center;
+		border:2px solid $product_border;
+		margin:5px;
+
+		.image{
+			height:220px;
+			padding:5px;
+		}
+	}
+}
+
+.customer{
+	margin-left:40px;
+	margin-top:50px;
+	height:400px;
+
+	p{
+		margin:25px 0px;
+	}
+
+	.first{
+		width:30%;
+		float:left;
+
+		p{
+			margin-left:40px;
+		}
+	}
+	.second{
+		float:left;
+		width:30%;
+	}
+
+	.third{
+		float:left;
+		width:40%;
+		ul{
+			margin-top:20px;
+			li{
+				list-style:none;
+				margin:25px 5px;
+				color:#E60000;
+			}
+		}
+	}
+}

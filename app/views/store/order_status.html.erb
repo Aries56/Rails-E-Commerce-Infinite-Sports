@@ -13,7 +13,7 @@
 
 <% @line_items.each do |l| %>
 <% subtotal += l.price %>
-<%= l.product.name %><br />
+1 x <%= l.product.name %><br />
 <% end %>
 
 <% if @order.pst_rate %>
