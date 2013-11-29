@@ -38,7 +38,8 @@ class StoreController < ApplicationController
   end
 
   def checkout
-    
+    @customer = Customer.new
+    @provinces = Province.all
   end
 
 protected

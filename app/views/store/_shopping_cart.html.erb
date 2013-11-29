@@ -9,10 +9,9 @@
       <%= form_tag remove_from_cart_path(product) do %>
       <%= submit_tag 'Remove from cart' %>
       <% end %>
-
-      <%= form_tag remove_from_cart_path(product) do %>
-      <%= submit_tag 'Checkout' %>
-      <% end %>      
     </p>
+  <% end %>
+  <%= form_tag checkout_path do %>
+  <%= submit_tag 'Checkout' %>
   <% end %>
 <% end %>
