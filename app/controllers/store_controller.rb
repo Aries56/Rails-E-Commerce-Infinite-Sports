@@ -10,6 +10,10 @@ class StoreController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def team
+    @team = Product.where(:team_id => params[:id])
+  end
+
   def search
   end
 

@@ -54,11 +54,11 @@ html{
 	min-height:1200px;
 }
 
-.products{
+.products, .teams{
 	overflow:auto;
 	margin-top:20px;
 
-	.product{
+	.product, .team{
 		float:left;
 		height:380px;
 		width:240px;
@@ -76,7 +76,7 @@ html{
 .customer{
 	margin-left:40px;
 	margin-top:50px;
-	height:400px;
+	height:425px;
 
 	p{
 		margin:25px 0px;
@@ -105,6 +105,21 @@ html{
 				margin:25px 5px;
 				color:#E60000;
 			}
+		}
+	}
+}
+
+.footer{
+	font-size:11px;
+	text-align:center;
+	margin:80px auto 20px auto;
+	width:90%;
+	ul{
+		list-style:none;
+		li{
+			display:inline;
+			width:300px;
+			margin:0px 1px;
 		}
 	}
 }

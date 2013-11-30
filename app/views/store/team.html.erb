@@ -1,0 +1,31 @@
+<%= render 'search' %>
+<%= render 'shopping_cart' %>
+<div class="teams">
+  <% @team.each do |t| %>
+    <div class="team">
+      <p>
+        <%= link_to t.team.name, p %>
+        <% if t.image %>
+          <br />
+          <div class="image">
+            <%= image_tag(t.image) %>
+          </div>
+        <% end %>
+        <br />
+        <%= t.name %>
+      </p>
+
+      <% if session[:products].include?(t.id) %>
+        <%= form_tag remove_from_cart_path(t) do %>
+        <%= submit_tag 'Remove from cart' %>
+        <% end %>
+      <% else %>
+        <%= form_tag add_to_cart_path(t) do %>
+        <%= submit_tag 'Add to cart' %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'footer' %>
